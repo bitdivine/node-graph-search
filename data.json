@@ -1,0 +1,28 @@
+{ "initial_states": ["Sibiu"]
+, "terminal_states":   ["Bucharest"]
+, "edges":
+  [ {"nodes":["Oradea","Zerind"],"cost":71}
+  , {"nodes":["Oradea","Sibiu"],"cost":151}
+  , {"nodes":["Zerind","Arad"],"cost":75}
+  , {"nodes":["Arad","Timisoara"],"cost":118}
+  , {"nodes":["Arad","Sibiu"],"cost":140}
+  , {"nodes":["Timisoara","Lugoj"],"cost":111}
+  , {"nodes":["Lugoj","Mehadia"],"cost":70}
+  , {"nodes":["Mehadia","Dobreta"],"cost":75}
+  , {"nodes":["Dobreta","Craiova"],"cost":120}
+  , {"nodes":["Sibiu","Fagaras"],"cost":99}
+  , {"nodes":["Sibiu","Rimnicu Vilcea"],"cost":80}
+  , {"nodes":["Rimnicu Vilcea","Pitesti"],"cost":97}
+  , {"nodes":["Rimnicu Vilcea","Craiova"],"cost":146}
+  , {"nodes":["Craiova","Pitesti"],"cost":138}
+  , {"nodes":["Fagaras","Bucharest"],"cost":211}
+  , {"nodes":["Pitesti","Bucharest"],"cost":101}
+  , {"nodes":["Giurgiu","Bucharest"],"cost":90}
+  , {"nodes":["Bucharest","Urziceni"],"cost":85}
+  , {"nodes":["Neamt","Iasi"],"cost":87}
+  , {"nodes":["Urziceni","Vaslui"],"cost":142}
+  , {"nodes":["Urziceni","Hirsova"],"cost":98}
+  , {"nodes":["Iasi","Vaslui"],"cost":92}
+  , {"nodes":["Hirsova","Eforie"],"cost":86}
+  ]
+}
