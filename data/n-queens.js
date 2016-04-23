@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 
 module.exports = N_queens;
 
@@ -10,7 +11,7 @@ function legal(queens){ // Queens is an array.
 	return !queens.some((row,col) => { // Does this queen attack previous queens?
 
 		// Missing entry?  Skip.
-		if ((undefined === row) or (null === row)) return;
+		if ((undefined === row) || (null === row)) return;
 
 		// Do any queens attack each other?
 		if (occupied_rows.has(row)) return true;
