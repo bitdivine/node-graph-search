@@ -7,6 +7,10 @@
     "lint": "jshint .",
     "test": "node -e \"var i=require('./index'),d=require('./data');for(x in i)console.log(x,i[x](d));\""
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bitdivine/node-graph-search.git"
+  },
   "keywords": [
     "graph", "search", "route finder",
     "machine learning",
