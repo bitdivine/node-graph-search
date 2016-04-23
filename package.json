@@ -1,0 +1,18 @@
+{
+  "name": "graph-search",
+  "version": "1.0.0",
+  "description": "Find routes from A to B in a graph.",
+  "main": "index.js",
+  "scripts": {
+    "lint": "jshint .",
+    "test": "node -e \"var i=require('./index'),d=require('./data');for(x in i)console.log(x,i[x](d));\""
+  },
+  "keywords": [
+    "graph", "search", "route finder",
+    "machine learning",
+    "optimisation", "optimization",
+    "artificial intelligence"
+  ],
+  "author": "Bitdivine",
+  "license": "MIT"
+}

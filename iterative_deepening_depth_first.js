@@ -13,6 +13,7 @@ var limited_depth_first = require('./limited_depth_first');
 
 function iterative_deepening_depth_first(problem, limit){
 	var i, ans;
+	if (limit === undefined) limit = Infinity;
 	for (i=0; i<limit; i++) {
 		ans = limited_depth_first(problem);
 		if (ans === null) return null;
