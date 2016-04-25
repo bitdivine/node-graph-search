@@ -1,6 +1,6 @@
 {
   "name": "graph-search",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Find routes from A to B in a graph.",
   "main": "index.js",
   "scripts": {
