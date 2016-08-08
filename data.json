@@ -25,4 +25,147 @@
   , {"nodes":["Iasi","Vaslui"],"cost":92}
   , {"nodes":["Hirsova","Eforie"],"cost":86}
   ]
+, "estimate":
+[
+  {
+    "nodes": [
+      "Drobeta",
+      "Bucharest"
+    ],
+    "cost": 332.34018715767735
+  },
+  {
+    "nodes": [
+      "Bucharest",
+      "Bucharest"
+    ],
+    "cost": 0
+  },
+  {
+    "nodes": [
+      "Vaslui",
+      "Bucharest"
+    ],
+    "cost": 154.14927829866735
+  },
+  {
+    "nodes": [
+      "Urziceni",
+      "Bucharest"
+    ],
+    "cost": 79.19595949289332
+  },
+  {
+    "nodes": [
+      "Giurgiu",
+      "Bucharest"
+    ],
+    "cost": 35.35533905932738
+  },
+  {
+    "nodes": [
+      "Zerind",
+      "Bucharest"
+    ],
+    "cost": 412.95036021294374
+  },
+  {
+    "nodes": [
+      "Lugoj",
+      "Bucharest"
+    ],
+    "cost": 332.34018715767735
+  },
+  {
+    "nodes": [
+      "Oradea",
+      "Bucharest"
+    ],
+    "cost": 380.42344827836257
+  },
+  {
+    "nodes": [
+      "Timisoara",
+      "Bucharest"
+    ],
+    "cost": 432.7493500861671
+  },
+  {
+    "nodes": [
+      "Pitesti",
+      "Bucharest"
+    ],
+    "cost": 113.13708498984761
+  },
+  {
+    "nodes": [
+      "Hirsova",
+      "Bucharest"
+    ],
+    "cost": 189.50461735799473
+  },
+  {
+    "nodes": [
+      "Craiova",
+      "Bucharest"
+    ],
+    "cost": 207.88939366884497
+  },
+  {
+    "nodes": [
+      "Neamt",
+      "Bucharest"
+    ],
+    "cost": 8.48528137423857
+  },
+  {
+    "nodes": [
+      "Fagaras",
+      "Bucharest"
+    ],
+    "cost": 134.35028842544403
+  },
+  {
+    "nodes": [
+      "Sibiu",
+      "Bucharest"
+    ],
+    "cost": 272.94321753800733
+  },
+  {
+    "nodes": [
+      "Mehadia",
+      "Bucharest"
+    ],
+    "cost": 328.09754647055803
+  },
+  {
+    "nodes": [
+      "Arad",
+      "Bucharest"
+    ],
+    "cost": 436.9919907732864
+  },
+  {
+    "nodes": [
+      "Iasi",
+      "Bucharest"
+    ],
+    "cost": 103.23759005323593
+  },
+  {
+    "nodes": [
+      "Rimnicu",
+      "Bucharest"
+    ],
+    "cost": 236.17366491630688
+  },
+  {
+    "nodes": [
+      "Eforie",
+      "Bucharest"
+    ],
+    "cost": 229.1025971044414
+  }
+  ]
 }

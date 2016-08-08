@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-// Does a breadth first search until it finds a path to the destination.  The path is not necessarily optimal.
+// Searches for the shortest path from A to B.  May be quite inefficient as it is blind to the likely progress towards the goal.
 // Node: { name: /* city name */, parent: /*points to another node or null*/, cost: /* number - cost from an initial position */}
 // Edge: { nodes: [city_name1, city_name2], cost: number }
 // Problem:
@@ -8,6 +8,8 @@
 // , "terminal_states":  [cityname_1, ...] // Possible finishing points
 // , "edges": [ edge1, edge2, ... ]        // See above for the form of an edge
 // }
+
+var Priority_Queue = require('./pqueue');
 
 function ancestry(node){
 	var route = [];
@@ -20,10 +22,10 @@ function setPath(obj,path,val){ // setPath({}, ['a',5,'b'],99) => { a: { '5': { 
 	return obj;
 }
 
-function breadth_first(problem){
-	var visited = new Set();                           // Names of tested nodes.
+function cheapest_first(problem){
+	var visited   = {};                                // Names of tested nodes => cheapest known cost
 	var final_set = new Set(problem.terminal_states);  // Names of destination nodes.
-	var boundary = problem.initial_states.map((name) => {return {name:name,parent:null,cost:0};}); // queue.  Add with push.  Remove with shift.
+	var boundary  = new Priority_Queue(problem.initial_states.map((name) => {return {name:name,parent:null,cost:0};}), "cost"); // queue.  Add with push.  Remove with shift.
 	// Make an index of edges by node so that I can refer to them thus: adjacent[city1][city2] == edge;
 	var adjacent = problem.edges.reduce
 		((adjacent, edge) => edge.nodes.reduce
@@ -31,19 +33,25 @@ function breadth_first(problem){
 			, adjacent
 			)
 		, {});
-	while (boundary.length > 0) {
-		var node = boundary.shift();
+	while (boundary.queue.length > 0) {
+		var node = boundary.queue.shift();
 		if (final_set.has(node.name)) return ancestry(node);
-		visited.add(node.name);
-		Object.keys(adjacent[node.name])
-			.filter((adj_node_name) => !visited.has(adj_node_name))
-			.forEach((adj_node_name) => boundary.push({name:adj_node_name, parent:node, cost:node.cost + adjacent[node.name][adj_node_name].cost}));
+		visited[node.name]	= (visited[node.name] === undefined)? node.cost
+					: (visited[node.name] > node.cost)? node.cost
+					:  visited[node.name];
+		if (!(visited[node.name] < node.cost)) {
+			visited[node.name] = node.cost;
+			Object.keys(adjacent[node.name])
+				.map((adj_node_name) => {return {name:adj_node_name, parent:node, cost:node.cost + adjacent[node.name][adj_node_name].cost}})
+				.filter((new_node) => !(visited[new_node.name] < new_node.cost))
+				.forEach((new_node) => boundary.push(new_node));
+		}
 	}
 	return null;
 }
 
-module.exports = breadth_first;
+module.exports = cheapest_first;
 
 if (!module.parent){
-	console.log(breadth_first(require(process.argv[2]  || './data')));
+	console.log(cheapest_first(require(process.argv[2]  || './data')));
 }
