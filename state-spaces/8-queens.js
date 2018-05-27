@@ -39,7 +39,7 @@ function problem(length) {
 
 console.log(module.parent)
 if (module.parent === null) {
-	const {solve} = require("../hillclimb-steepest-fist-iterative-deepening")
+	const {solve} = require(`../${process.argv[3] || "hillclimb-steepest-ascent-with-iterative-deepening"}`)
 	const length = Number(process.argv[2]) || 8
 	console.log(solve(problem(length)))
 }
